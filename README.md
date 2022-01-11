@@ -2,7 +2,7 @@
 
 ## Installation
 
-The app relies on a PostgreSQL database whose use is justified in Considerations section of this documentation. That database is deployed using Docker for convenience.
+The app relies on a PostgreSQL database whose use is justified in Considerations section of this documentation. That database is deployed using Docker for convenience. Beyond that npm commands are used.
 
 ## Running the app
 
@@ -18,16 +18,15 @@ $ npm install
 
 # run migrations
 $ npx typeorm migration:run
-```
 
-# development
+# Run in development
 $ npm run start
 ```
 
-## Test
+## Run tests
 
 ```bash
-# unit tests
+# Run unit tests
 $ npm run test
 ```
 
@@ -66,6 +65,6 @@ curl -H "Authorization: Bearer <jwt_token>"  http://localhost:3000/exercises
 
 ## To Do
 
-- Add test to auth domain
-- Improve test coverage of users domain
+- Increase test coverage generally (and specifically forauth domain)
 - Try to move migration folder to each of the apps (exercises and users)
+- Finish up dockerizing the application (both database and api)
