@@ -2,6 +2,10 @@
 
 ## Development considerations
 
+- Versions used:
+node >= 17.0.1
+npm >= 8.1.4
+
 - The Nest.js framework was used to develop the application
 
 - The app relies on a PostgreSQL database whose use is justified in the following bullet. That database is deployed using Docker for convenience. Beyond that npm commands are used to run the application.
@@ -19,8 +23,11 @@ $ cp env.template .env
 # start containers
 $ docker-compose up --build -d
 
-# installation dependencies
+# dependencies installation
 $ npm install
+
+# build code
+$ npm run build
 
 # run migrations
 $ npx typeorm migration:run
