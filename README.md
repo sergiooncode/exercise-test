@@ -48,10 +48,16 @@ curl --request POST -H "Content-Type: application/json" --data '{"name":"Foo Bar
 - Copy the token in accessToken field of the reponse in previous step
 
 - Create an exercise (copy token from previous step in place of <jwt_token>)
+
+```bash
 curl --request POST -H "Authorization: Bearer <jwt_token>" -H "Content-Type: application/json" --data '{"content":"lorem ipsum"}' http://localhost:3000/exercises
+```
 
 - Get all exercises (copy token from previous step in place of <jwt_token>)
+
+```bash
 curl -H "Authorization: Bearer <jwt_token>"  http://localhost:3000/exercises
+```
 
 ## Considerations
 
