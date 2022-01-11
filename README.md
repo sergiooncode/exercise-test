@@ -1,10 +1,12 @@
 # Take Home Test: Exercises API
 
-## Installation
+## Development considerations
 
-The app relies on a PostgreSQL database whose use is justified in Considerations section of this documentation. That database is deployed using Docker for convenience. Beyond that npm commands are used.
+- The app relies on a PostgreSQL database whose use is justified in the following bullet. That database is deployed using Docker for convenience. Beyond that npm commands are used to run the application.
 
-## Running the app
+- I decided to use PostgreSQL instead of something simpler like SQLite because of the requirement of using UUID as PK/FK id in the data model since PostgreSQL has out-of-box support for generating safe UUIDs
+
+## Installing and running the app
 
 ```bash
 # initialize dotenv file
@@ -58,13 +60,8 @@ curl --request POST -H "Authorization: Bearer <jwt_token>" -H "Content-Type: app
 curl -H "Authorization: Bearer <jwt_token>"  http://localhost:3000/exercises
 ```
 
-## Considerations
-
-- I decided to use PostgreSQL instead of something simpler like SQLite because of the requirement of using UUID as PK/FK id in the data model
-- 
-
 ## To Do
 
-- Increase test coverage generally (and specifically forauth domain)
-- Try to move migration folder to each of the apps (exercises and users)
+- Increase test coverage generally (and specifically for users and auth domains)
+- Try to move migration folder to each of the apps (exercises and users) so migrations of each domain can evolve independently
 - Finish up dockerizing the application (both database and api)
