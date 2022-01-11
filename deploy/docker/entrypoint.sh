@@ -1,0 +1,1 @@
+bash /tmp/wait-for-postgres.sh localdb
