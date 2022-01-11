@@ -2,9 +2,13 @@
 
 ## Development considerations
 
+- The Nest.js framework was used to develop the application
+
 - The app relies on a PostgreSQL database whose use is justified in the following bullet. That database is deployed using Docker for convenience. Beyond that npm commands are used to run the application.
 
 - I decided to use PostgreSQL instead of something simpler like SQLite because of the requirement of using UUID as PK/FK id in the data model since PostgreSQL has out-of-box support for generating safe UUIDs
+
+- Authentication with JWT tokens was added
 
 ## Installing and running the app
 
