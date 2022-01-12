@@ -49,7 +49,14 @@ export class UsersService {
     }
 
     const user: User = await this.usersRepository.create({ name, password });
-    await this.usersRepository.save(user);
+
+    try {
+      await this.usersRepository.save(user);
+    } catch (error) {
+      if (error.driverError.severity === 'ERROR' && error.driverError.code == 22001) {
+        throw new HttpException('Cannot have a name that long', HttpStatus.BAD_REQUEST);
+      }
+    }
 
     return toUserDto(user);
   }
